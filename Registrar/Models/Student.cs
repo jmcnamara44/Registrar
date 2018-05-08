@@ -10,10 +10,10 @@ namespace RegistrarApp.Models
     private int _id;
     private string _studentName;
 
-    public Student(string StudentName, int Id = 0)
+    public Student(string studentName, int Id = 0)
     {
       _id = Id;
-      _studentName = StudentName;
+      _studentName = studentName;
     }
     public override bool Equals(System.Object otherStudent)
     {
@@ -88,7 +88,7 @@ namespace RegistrarApp.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM students;";
+      cmd.CommandText = @"DELETE FROM students; DELETE FROM course_student;";
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)

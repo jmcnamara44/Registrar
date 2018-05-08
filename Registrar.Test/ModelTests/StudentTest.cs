@@ -14,33 +14,34 @@ namespace RegistrarApp.Tests
         public void Dispose()
         {
             Student.DeleteAll();
+            Course.DeleteAll();
         }
         public StudentTests()
         {
             DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=registrar_test;";
         }
-        [TestMethod]
-        public void GetAll_DbStartsEmpty_0()
-        {
-          //Arrange
-          //Act
-          int result = Student.GetAll().Count;
-
-          //Assert
-          Assert.AreEqual(0, result);
-        }
-        [TestMethod]
-        public void Save_SavesToDatabase_StudentList()
-        {
-
-          Student newStudent = new Student("Helen", 22);
-          Student otherStudent = new Student("bob");
-          newStudent.Save();
-          otherStudent.Save();
-          List <Student> studentList = new List<Student>{newStudent, otherStudent};
-          List <Student> result = Student.GetAll();
-          CollectionAssert.AreEqual(studentList, result);
-        }
+        // [TestMethod]
+        // public void GetAll_DbStartsEmpty_0()
+        // {
+        //   //Arrange
+        //   //Act
+        //   int result = Student.GetAll().Count;
+        //
+        //   //Assert
+        //   Assert.AreEqual(0, result);
+        // }
+        // [TestMethod]
+        // public void Save_SavesToDatabase_StudentList()
+        // {
+        //
+        //   Student newStudent = new Student("Helen");
+        //   Student otherStudent = new Student("bob");
+        //   newStudent.Save();
+        //   otherStudent.Save();
+        //   List <Student> studentList = new List<Student>{newStudent, otherStudent};
+        //   List <Student> result = Student.GetAll();
+        //   CollectionAssert.AreEqual(studentList, result);
+        // }
         // [TestMethod]
         // public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
         // {
