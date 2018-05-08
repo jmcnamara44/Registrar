@@ -1,0 +1,8 @@
+/Users/Guest/Desktop/Registrar.Solution/Registrar/bin/Debug/netcoreapp1.1/Registrar.deps.json
+/Users/Guest/Desktop/Registrar.Solution/Registrar/bin/Debug/netcoreapp1.1/Registrar.runtimeconfig.json
+/Users/Guest/Desktop/Registrar.Solution/Registrar/bin/Debug/netcoreapp1.1/Registrar.runtimeconfig.dev.json
+/Users/Guest/Desktop/Registrar.Solution/Registrar/obj/Debug/netcoreapp1.1/Registrar.AssemblyInfo.cs
+/Users/Guest/Desktop/Registrar.Solution/Registrar/bin/Debug/netcoreapp1.1/Registrar.dll
+/Users/Guest/Desktop/Registrar.Solution/Registrar/bin/Debug/netcoreapp1.1/Registrar.pdb
+/Users/Guest/Desktop/Registrar.Solution/Registrar/obj/Debug/netcoreapp1.1/Registrar.dll
+/Users/Guest/Desktop/Registrar.Solution/Registrar/obj/Debug/netcoreapp1.1/Registrar.pdb
