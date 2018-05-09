@@ -21,5 +21,9 @@ namespace RegistrarApp.Controllers
             newStudent.Save();
             return RedirectToAction("AddStudent");
         }
+        // [HttpGet("/add-student-to-course")]
+
     }
+
+
 }

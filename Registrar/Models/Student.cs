@@ -131,6 +131,39 @@ namespace RegistrarApp.Models
         }
         return courses;
     }
+    public static Student Find(int id)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM students WHERE id = @thisId;";
+
+      MySqlParameter thisId = new MySqlParameter();
+      thisId.ParameterName = "@thisId";
+      thisId.Value = id;
+      cmd.Parameters.Add(thisId);
+
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+
+      int studentId =0;
+      string studentName="";
+
+      while (rdr.Read())
+      {
+        studentId = rdr.GetInt32(0);
+        studentName = rdr.GetString(1);
+      }
+      Student foundStudent= new Student(studentName, studentId);
+
+      conn.Close();
+      if (conn!= null)
+      {
+        conn.Dispose();
+      }
+
+      return foundStudent;
+    }
     public static void DeleteAll()
     {
       MySqlConnection conn = DB.Connection();

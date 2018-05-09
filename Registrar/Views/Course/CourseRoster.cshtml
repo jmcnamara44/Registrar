@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+<h2>@Model["course"].GetCourseName()</h2>
+<table style="width=100%">
+  <tr>
+    <th>Student ID</th>
+    <th>Student Name</th>
+  </tr>
+  @foreach(var student in Model["students"])
+  {
+    <tr>
+      <td>@student.GetId()</td>
+      <td>@student.GetStudentName()</td>
+    </tr>
+  }
+</table>

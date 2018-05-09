@@ -21,5 +21,17 @@ namespace RegistrarApp.Controllers
           newCourse.Save();
           return RedirectToAction("AddCourse");
       }
+      [HttpGet("/course-roster/{id}")]
+      public ActionResult CourseRoster(int id)
+      {
+          Dictionary<string, object> model = new Dictionary<string, object>{};
+          Course currentCourse = Course.Find(id);
+          model.Add("course", currentCourse);
+          List<Student> currentStudents = currentCourse.GetStudents();
+          model.Add("students", currentStudents);
+          List<Student> allStudents = Student.GetAll();
+          model.Add()
+          return View(model);
+      }
     }
 }
