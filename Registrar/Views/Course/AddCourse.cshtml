@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+<table style="width=100%">
+  <tr>
+    <th>Course ID</th>
+    <th>Course Name</th>
+  </tr>
+  @foreach(var course in Model)
+  {
+    <tr>
+      <td>@course.GetId()</td>
+      <td>@course.GetCourseName()</td>
+    </tr>
+  }
+</table>
+
+<h3>Add new course</h3>
+<form action="/create-course" method="post">
+  <div class="form-group">
+    <label for="course-name">Enter course name</label>
+    <input id="course-name" name="course-name" class="form-control" type="text" required>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>

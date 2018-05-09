@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+<table style="width=100%">
+  <tr>
+    <th>Student ID</th>
+    <th>Student Name</th>
+  </tr>
+  @foreach(var student in Model)
+  {
+    <tr>
+      <td>@student.GetId()</td>
+      <td>@student.GetStudentName()</td>
+    </tr>
+  }
+</table>
+
+<h3>Enroll a new student</h3>
+<form action="/create-student" method="post">
+  <div class="form-group">
+    <label for="student-name">Enter the student's full name</label>
+    <input id="student-name" name="student-name" class="form-control" type="text" required>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
