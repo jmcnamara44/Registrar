@@ -11,3 +11,16 @@
 /Users/Guest/Desktop/Registrar.Solution/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.pdb
 /Users/Guest/Desktop/Registrar.Solution/Registrar.Test/obj/Debug/netcoreapp1.1/Registrar.Tests.dll
 /Users/Guest/Desktop/Registrar.Solution/Registrar.Test/obj/Debug/netcoreapp1.1/Registrar.Tests.pdb
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.Tests.deps.json
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.Tests.runtimeconfig.json
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.Tests.runtimeconfig.dev.json
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.Tests.dll
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.Tests.pdb
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.dll
+/Users/Guest/Desktop/Registrar/Registrar.Test/bin/Debug/netcoreapp1.1/Registrar.pdb
+/Users/Guest/Desktop/Registrar/Registrar.Test/obj/Debug/netcoreapp1.1/Registrar.Tests.AssemblyInfo.cs
+/Users/Guest/Desktop/Registrar/Registrar.Test/obj/Debug/netcoreapp1.1/Registrar.Tests.dll
+/Users/Guest/Desktop/Registrar/Registrar.Test/obj/Debug/netcoreapp1.1/Registrar.Tests.pdb
