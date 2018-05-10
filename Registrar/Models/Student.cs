@@ -131,6 +131,19 @@ namespace RegistrarApp.Models
         }
         return courses;
     }
+    public static void DeleteAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM students; DELETE FROM course_student;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
     public static Student Find(int id)
     {
       MySqlConnection conn = DB.Connection();
@@ -164,15 +177,33 @@ namespace RegistrarApp.Models
 
       return foundStudent;
     }
-    public static void DeleteAll()
+    public void DeleteStudent()
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM students; DELETE FROM course_student;";
+      cmd.CommandText = @"DELETE FROM students WHERE id = @thisId; DELETE FROM course_student WHERE course_id = @thisId;";
+      cmd.Parameters.Add(new MySqlParameter("@thisId", _id));
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)
+      {
+          conn.Dispose();
+      }
+    }
+    public void UpdateStudent(string newStudent)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"UPDATE students SET student_name = @studentName WHERE id = @searchId";
+      cmd.Parameters.Add(new MySqlParameter("@searchId", _id));
+      cmd.Parameters.Add(new MySqlParameter("@studentName", newStudent));
+      cmd.ExecuteNonQuery();
+      _studentName = newStudent;
+      conn.Close();
+      if (conn !=null)
       {
           conn.Dispose();
       }

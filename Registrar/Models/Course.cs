@@ -83,7 +83,6 @@ namespace RegistrarApp.Models
           conn.Dispose();
       }
     }
-
     public void AddStudent(Student newStudent)
     {
       MySqlConnection conn = DB.Connection();
@@ -188,6 +187,23 @@ namespace RegistrarApp.Models
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)
+      {
+          conn.Dispose();
+      }
+    }
+    public void UpdateCourse(string newCourse)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"UPDATE courses SET course_name = @courseName WHERE id = @searchId";
+      cmd.Parameters.Add(new MySqlParameter("@searchId", _id));
+      cmd.Parameters.Add(new MySqlParameter("@courseName", newCourse));
+      cmd.ExecuteNonQuery();
+      _courseName = newCourse;
+      conn.Close();
+      if (conn !=null)
       {
           conn.Dispose();
       }

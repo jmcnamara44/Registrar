@@ -42,8 +42,12 @@ namespace RegistrarApp.Controllers
             newCourse.AddStudent(newStudent);
             return RedirectToAction("StudentPage", new { id = studentId} );
         }
+        [HttpGet("/delete-student/{id}")]
+        public ActionResult DeleteStudent(int id)
+        {
+            Student deleteStudent = Student.Find(id);
+            deleteStudent.DeleteStudent();
+            return RedirectToAction("AddStudent");
+        }
     }
-    
-
-
 }

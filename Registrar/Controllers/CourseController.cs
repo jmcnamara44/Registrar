@@ -40,5 +40,19 @@ namespace RegistrarApp.Controllers
           deleteCourse.DeleteCourse();
           return RedirectToAction("AddCourse");
       }
+      [HttpGet("/update-course/{id}")]
+      public ActionResult UpdateCourse(int id)
+      {
+          Course updateCourse = Course.Find(id);
+          return View(updateCourse);
+      }
+      [HttpPost("/course-updated/{id}")]
+      public ActionResult UpdatedCourse(int id)
+      {
+          string newCourseName = Request.Form["course-name"];
+          Course newCourse = new Course(newCourseName, id);
+          newCourse.UpdateCourse(newCourseName);
+          return RedirectToAction("AddCourse");
+      }
     }
 }

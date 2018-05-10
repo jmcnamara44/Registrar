@@ -6,7 +6,8 @@
   <tr>
     <th>Course ID</th>
     <th>Course Name</th>
-    <th>Delete Course?</th>
+    <th>Delete Course</th>
+    <th>Update Student Record</th>
   </tr>
   @foreach(var course in Model)
   {
@@ -14,6 +15,7 @@
       <td>@course.GetId()</td>
       <td><a href="/course-roster/@course.GetId()">@course.GetCourseName()</a></td>
       <td><a href="/delete-course/@course.GetId()">Delete Course</a></td>
+      <td><a href="/update-course/@course.GetId()">Update Course Info</a></td>
     </tr>
   }
 </table>

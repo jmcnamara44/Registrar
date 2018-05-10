@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+<h3>Update @Model.GetCourseName()</h3>
+<form action="/course-updated/@Model.GetId()" method="post">
+  <div class="form-group">
+    <label for="course-name">Enter course name</label>
+    <input id="course-name" name="course-name" class="form-control" type="text" required>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
