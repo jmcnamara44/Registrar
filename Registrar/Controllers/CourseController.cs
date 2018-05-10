@@ -30,7 +30,7 @@ namespace RegistrarApp.Controllers
           List<Student> currentStudents = currentCourse.GetStudents();
           model.Add("students", currentStudents);
           List<Student> allStudents = Student.GetAll();
-          model.Add()
+          // model.Add();
           return View(model);
       }
     }

@@ -21,8 +21,27 @@ namespace RegistrarApp.Controllers
             newStudent.Save();
             return RedirectToAction("AddStudent");
         }
-        // [HttpGet("/add-student-to-course")]
-
+        [HttpGet("/student-course-list/{id}")]
+        public ActionResult StudentPage(int id)
+        {
+            Dictionary<string, object> model = new Dictionary<string, object>{};
+            Student foundStudent = Student.Find(id);
+            List<Course> studentCourses = foundStudent.GetCourses();
+            List<Course> allCourses = Course.GetAll();
+            model.Add("studentCourses", studentCourses);
+            model.Add("allCourses", allCourses);
+            model.Add("foundStudent", foundStudent);
+            return View(model);
+        }
+        [HttpPost("/add-course-to-student/{id}")]
+        public ActionResult CreateCourse(int id)
+        {
+            Student newStudent = Student.Find(id);
+            int studentId = newStudent.GetId();
+            Course newCourse = Course.Find(Int32.Parse(Request.Form["course-name"]));
+            newCourse.AddStudent(newStudent);
+            return RedirectToAction("StudentPage", new { id = studentId} );
+        }
     }
 
 

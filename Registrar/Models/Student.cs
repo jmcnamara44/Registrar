@@ -176,7 +176,6 @@ namespace RegistrarApp.Models
       {
           conn.Dispose();
       }
-
     }
   }
 }

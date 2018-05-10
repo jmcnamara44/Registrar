@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+<h3>@Model["foundStudent"].GetStudentName()'s Course List</h3>
+<table style="width=100%">
+  <tr>
+    <th>Course ID</th>
+    <th>Course Name</th>
+    @* <th>Action</th> *@ this is a planned method that has not yet been written to delete specific courses in this student's course list
+  </tr>
+  @foreach(var course in Model["studentCourses"])
+  {
+    <tr>
+      <td>@course.GetId()</td>
+      <td>@course.GetCourseName()</td>
+      @* <td><a href="delete-course">Withdraw</a></td> *@
+    </tr>
+  }
+</table>
+
+<h2>Add this student to a new course</h2>
+<form action="/add-course-to-student/@Model["foundStudent"].GetId()" method="post">
+  <div class="form-group">
+    <label for="course">Select which course you'd like to add this student to</label>
+    <select class="form-control" id="course-name" name="course-name" required>
+      <option value="" disabled selected>Select a course name</option>
+      @foreach(var course in Model["allCourses"])
+      {
+        <option value="@course.GetId()">@course.GetCourseName()</option>
+      }
+    </select>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
