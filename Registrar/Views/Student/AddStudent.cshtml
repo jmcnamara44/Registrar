@@ -7,6 +7,7 @@
     <th>Student ID</th>
     <th>Student Name</th>
     <th>Delete Student</th>
+    <th>Update Student</th>
   </tr>
   @foreach(var student in Model)
   {
@@ -14,6 +15,7 @@
       <td>@student.GetId()</td>
       <td><a href="/student-course-list/@student.GetId()">@student.GetStudentName()</a></td>
       <td><a href="/delete-student/@student.GetId()">Delete Student Record</a></td>
+      <td><a href="/update-student/@student.GetId()">Update Student Record</a></td>
     </tr>
   }
 </table>

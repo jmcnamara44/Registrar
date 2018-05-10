@@ -49,5 +49,19 @@ namespace RegistrarApp.Controllers
             deleteStudent.DeleteStudent();
             return RedirectToAction("AddStudent");
         }
+        [HttpGet("/update-student/{id}")]
+        public ActionResult Updatestudent(int id)
+        {
+            Student updateStudent = Student.Find(id);
+            return View(updateStudent);
+        }
+        [HttpPost("/student-updated/{id}")]
+        public ActionResult UpdatedStudent(int id)
+        {
+            string newStudentName = Request.Form["student-name"];
+            Student newStudent = new Student(newStudentName, id);
+            newStudent.UpdateStudent(newStudentName);
+            return RedirectToAction("AddStudent");
+        }
     }
 }
