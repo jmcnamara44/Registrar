@@ -43,6 +43,7 @@ namespace RegistrarApp.Controllers
             return RedirectToAction("StudentPage", new { id = studentId} );
         }
     }
+    
 
 
 }

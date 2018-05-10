@@ -6,12 +6,14 @@
   <tr>
     <th>Course ID</th>
     <th>Course Name</th>
+    <th>Delete Course?</th>
   </tr>
   @foreach(var course in Model)
   {
     <tr>
       <td>@course.GetId()</td>
       <td><a href="/course-roster/@course.GetId()">@course.GetCourseName()</a></td>
+      <td><a href="/delete-course/@course.GetId()">Delete Course</a></td>
     </tr>
   }
 </table>

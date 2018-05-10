@@ -33,5 +33,12 @@ namespace RegistrarApp.Controllers
           // model.Add();
           return View(model);
       }
+      [HttpGet("/delete-course/{id}")]
+      public ActionResult DeleteCourse(int id)
+      {
+          Course deleteCourse = Course.Find(id);
+          deleteCourse.DeleteCourse();
+          return RedirectToAction("AddCourse");
+      }
     }
 }

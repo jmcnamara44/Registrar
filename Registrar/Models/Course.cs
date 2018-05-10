@@ -178,5 +178,19 @@ namespace RegistrarApp.Models
 
       return foundCourse;
     }
+    public void DeleteCourse()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM courses WHERE id = @thisId; DELETE FROM course_student WHERE course_id = @thisId;";
+      cmd.Parameters.Add(new MySqlParameter("@thisId", _id));
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+          conn.Dispose();
+      }
+    }
   }
 }
